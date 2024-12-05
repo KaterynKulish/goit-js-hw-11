@@ -1,5 +1,8 @@
 .form-search {
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
 }
 .image-search {
   border: 1px solid #808080;
@@ -20,7 +23,6 @@
   border-radius: 8px;
   padding: 8px 16px;
   width: 91px;
-  height: 40px;
   font: 500 16px / 1.5 var(--font-family);
   letter-spacing: 0.04em;
   color: #fff;
@@ -32,28 +34,49 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 24px;
+  margin: 0 auto;
 }
 
 .photo-item {
   width: calc((100% - 48px) / 3);
+  border: 1px solid #808080;
+  width: 360px;
+}
+
+.photo-img {
+  object-fit: cover;
+  height: 152px;
+  width: 360px;
+}
+
+.photo-link {
+  /* height: 152px; */
 }
 
 .photo-info-container {
   display: flex;
   flex-direction: row;
-  padding: 20px;
+  gap: 28px;
   justify-content: space-around;
   text-align: center;
+  height: 48px;
+}
+
+.photo-info-item {
 }
 
 .photo-info-label {
-  font: 600 12px / 1.33333 var(--font-family);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: #2e2f42;
 }
 
 .photo-info-value {
-  font: 400 12px / 2 var(--font-family);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
   letter-spacing: 0.04em;
   color: #2e2f42;
 }
