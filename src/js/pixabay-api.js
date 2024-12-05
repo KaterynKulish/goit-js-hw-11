@@ -1,5 +1,5 @@
 const API_KEY = '47426000-935f334b470be797f22188feb';
-const BASE_URL = `https://pixabay.com/api/`;
+const BASE_URL = `https://pixabay.com/api`;
 
 export function servicePhoto(value) {
   const params = new URLSearchParams({
@@ -10,10 +10,12 @@ export function servicePhoto(value) {
     safesearch: true,
   });
 
-  return fetch(`BASE_URL?${params}`).then(response => {
+  return fetch(`${BASE_URL}?${params}`).then(response => {
     if (!response.ok) {
       throw new Error(response.statusText);
     }
+    // console.log(response.json());
+
     return response.json();
   });
 }
