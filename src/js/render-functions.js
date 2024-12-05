@@ -13,8 +13,9 @@ export function markup(arr) {
         `
         <li class="photo-item">
         <a class="photo-link" href="${largeImageURL}" >
-        <img src=${webformatURL} alt="${tags}"/>
+        <img class="photo-img" src=${webformatURL} alt="${tags}"/>
        </a> 
+
        <div class="photo-info-container">
           <div class="photo-info-item">
           <span class="photo-info-label">Likes</span>
