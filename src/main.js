@@ -17,8 +17,10 @@ function handleSubmit(event) {
   event.preventDefault();
   spinner.style.visibility = 'visible';
 
-  const value = event.target.elements.imageQuery.value;
+  const value = event.target.elements.imageQuery.value.trim();
   if (value === '') {
+    spinner.style.visibility = 'hidden';
+
     return;
   }
   servicePhoto(value)
@@ -52,9 +54,16 @@ function handleSubmit(event) {
     })
 
     .catch(error => {
+      iziToast.error({
+        backgroundColor: 'red',
+        position: 'topRight',
+        messageColor: 'white',
+        iconColor: 'white',
+        maxWidth: 432,
+        message: error.message,
+      });
       spinner.style.visibility = 'hidden';
-
-      console.log(error);
+      console.log(error.message);
     })
     .finally(() => form.reset());
 }
