@@ -27,7 +27,6 @@ function handleSubmit(event) {
     .then(photo => {
       gallery.innerHTML = '';
       if (!photo.total) {
-        spinner.style.visibility = 'hidden';
         iziToast.show({
           backgroundColor: 'red',
           position: 'topRight',
@@ -41,16 +40,15 @@ function handleSubmit(event) {
       }
       console.log(photo);
       gallery.innerHTML = markup(photo.hits);
-      spinner.style.visibility = 'hidden';
 
-      const gallery = new SimpleLightbox('.image-gallery a', {
+      const galleryBox = new SimpleLightbox('.image-gallery a', {
         overlayOpacity: 0.7,
         captionsData: 'alt',
         captionDelay: 250,
         captionPosition: 'bottom',
         captionType: 'attr',
       });
-      gallery.refresh();
+      galleryBox.refresh();
     })
 
     .catch(error => {
@@ -62,8 +60,10 @@ function handleSubmit(event) {
         maxWidth: 432,
         message: error.message,
       });
-      spinner.style.visibility = 'hidden';
       console.log(error.message);
     })
-    .finally(() => form.reset());
+    .finally(() => {
+      form.reset();
+      spinner.style.visibility = 'hidden';
+    });
 }
