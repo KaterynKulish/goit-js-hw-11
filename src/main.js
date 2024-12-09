@@ -43,7 +43,7 @@ function handleSubmit(event) {
       gallery.innerHTML = markup(photo.hits);
       spinner.style.visibility = 'hidden';
 
-      new SimpleLightbox('.image-gallery a', {
+      const gallery = new SimpleLightbox('.image-gallery a', {
         overlayOpacity: 0.7,
         captionsData: 'alt',
         captionDelay: 250,
