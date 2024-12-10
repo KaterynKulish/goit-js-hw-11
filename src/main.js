@@ -49,6 +49,7 @@ function handleSubmit(event) {
         captionType: 'attr',
       });
       galleryBox.refresh();
+      form.reset();
     })
 
     .catch(error => {
@@ -63,7 +64,6 @@ function handleSubmit(event) {
       console.log(error.message);
     })
     .finally(() => {
-      form.reset();
       spinner.style.visibility = 'hidden';
     });
 }
