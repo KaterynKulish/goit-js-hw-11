@@ -42,7 +42,7 @@ function handleSubmit(event) {
       gallery.innerHTML = markup(photo.hits);
 
       const galleryBox = new SimpleLightbox('.image-gallery a', {
-        overlayOpacity: 0.7,
+        overlayOpacity: 0.8,
         captionsData: 'alt',
         captionDelay: 250,
         captionPosition: 'bottom',
